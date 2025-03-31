@@ -928,42 +928,6 @@ def ip_is_alive(ip, hosts):
              is_alive = True
     return is_alive
 
-# Informa si una IP no pertenece a alguna red local de nuestra máquina
-def is_not_local_network(target):
-    """
-    Es una funcion auxiliar que revisa si el target indicado pertenece a la red local
-
-    Args:
-        target: IP a revisar
-    Retorna:
-        Un valor booleano, será True si no pertenece a la red local y False si pertenece
-    """
-    try:
-        # Obtener la lista de interfaces IP de la máquina local
-        local_ips = [ip for ip in ipaddress.IPv4Network('127.0.0.0/8').hosts()]  # Loopback
-
-        # Añadir interfaces de red activas
-        import psutil
-        for iface, addrs in psutil.net_if_addrs().items():
-            for addr in addrs:
-                if addr.family == 2:  # IPv4
-                    local_ips.append(ipaddress.IPv4Address(addr.address))
-
-        # Verificar si el target es una red o un host
-        try:
-            network = ipaddress.ip_network(target, strict=False)
-        except ValueError:
-            network = ipaddress.ip_network(f"{target}/32")
-
-        # Verificar si la red objetivo coincide con alguna interfaz local
-        for local_ip in local_ips:
-            if local_ip in network:
-                return False
-        return True
-    except Exception as e:
-        print(colored(f"[ERROR] Unable to determine local network: {e}", "red"))
-        return True
-
 #
 # Programa principal
 #
