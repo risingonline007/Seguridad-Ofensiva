@@ -1,0 +1,18 @@
+{
+    "53": "DNS(rd=1, qd=DNSQR(qname=\"google.com\"))",
+    "161": "SNMP(community=\"public\",PDU=SNMPget(varbindlist=[SNMPvarbind(oid=ASN1_OID(\"1.3.6.1.2.1.1.1.0\"))]))",
+    "123": "NTP(version=4)",
+    "67": "BOOTP(op=1)",
+    "68": "BOOTP(op=2)",
+    "500": "ISAKMP(init_cookie=RandShort(), exch_type=1)",
+    "69": "TFTP(op=1) / TFTP_RRQ(filename=\"testfile\", mode=\"octet\")",
+    "514": "Raw(load=\"<14>Oct 11 22:14:15 testhost syslogd: restart\")",
+    "5060": "Raw(load=\"INVITE sip:user@example.com SIP/2.0\\r\\nVia: SIP/2.0/UDP 192.0.2.1:5060;branch=z9hG4bK776asdhds\\r\\nFrom: \\\"Alice\\\" <sip:alice@example.com>;tag=1928301774\\r\\nTo: <sip:bob@example.com>\\r\\nCall-ID: a84b4c76e66710@pc33.example.com\\r\\nCSeq: 314159 INVITE\\r\\nContact: <sip:alice@pc33.example.com>\\r\\nContent-Type: application/sdp\\r\\nContent-Length: 0\\r\\n\\r\\n\")",
+    "9200": "Raw(load=\"GET /_cluster/health HTTP/1.1\\r\\nHost: localhost:9200\\r\\n\\r\\n\")",
+    "10050": "Raw(load=\"ZBXD\\x01\\x08\\x00\\x00\\x00\\x00\\x00\\x00\\x00\")",
+    "27015": "Raw(load=\"\\xff\\xff\\xff\\xffTSource Engine Query\\x00\")",
+    "27960": "Raw(load=\"\\xff\\xff\\xff\\xffgetstatus\\x00\")",
+    "137": "NBNSHeader(NAME_TRN_ID=0x8228) / NBNSQueryRequest(QUESTION_NAME= '*', QUESTION_TYPE='NBSTAT')",
+    "0": "Raw(load=\"\\x00\\x00\\x00\\x00Pingtest\\x00\\x00\\x00\\x00\")"
+}
+
